@@ -48,7 +48,7 @@ public class grabEngage extends Command {
     @Override
     protected void execute() 
     {
-    	grabbyCompressor.setClosedLoopControl(true);
+    	grabbyCompressor.setClosedLoopControl(true); //Check this
     }
 
     // Make this return true when this Command no longer needs to run execute()
