@@ -42,6 +42,7 @@ public class grabEngage extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -49,6 +50,7 @@ public class grabEngage extends Command {
     protected void execute() 
     {
     	grabbyCompressor.setClosedLoopControl(true); //Check this
+    	Robot.arm.Grab();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -62,7 +64,6 @@ public class grabEngage extends Command {
     protected void end() 
     {
     	grabbyCompressor.setClosedLoopControl(false);
-
     }
 
     // Called when another command which requires one or more of the same
