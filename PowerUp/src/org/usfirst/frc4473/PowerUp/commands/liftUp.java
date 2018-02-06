@@ -65,6 +65,6 @@ public class liftUp extends Command {
     // subsystems is scheduled to run
     protected void interrupted() 
     {
-    	Robot.lift.stop();
+    	end();
     }
 }
