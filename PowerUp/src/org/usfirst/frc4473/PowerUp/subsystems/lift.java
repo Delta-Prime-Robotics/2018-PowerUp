@@ -42,7 +42,7 @@ public class lift extends Subsystem {
 	private final SpeedController leftLiftVic = RobotMap.liftleftLiftVic;
     private final SpeedController rightLiftVic = RobotMap.liftrightLiftVic;
     
-    DigitalInput limitSwitch = new DigitalInput(1);
+    DigitalInput limitSwitch = new DigitalInput(3);
     Counter counter = new Counter(limitSwitch);
     
     @Override
