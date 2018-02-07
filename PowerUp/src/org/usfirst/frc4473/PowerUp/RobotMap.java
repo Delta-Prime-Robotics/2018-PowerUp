@@ -66,7 +66,7 @@ public class RobotMap {
         liftrightLiftVic.setInverted(false);
         
         armgrabbyCompressor = new Compressor(5);
-        hug = new Solenoid(1);
+        hug = new Solenoid(0);
         
         clawLiftVic = new VictorSP(6);
         

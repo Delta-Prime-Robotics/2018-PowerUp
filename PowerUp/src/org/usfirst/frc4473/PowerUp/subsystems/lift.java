@@ -42,8 +42,8 @@ public class lift extends Subsystem {
 	private final SpeedController leftLiftVic = RobotMap.liftleftLiftVic;
     private final SpeedController rightLiftVic = RobotMap.liftrightLiftVic;
     
-    DigitalInput limitSwitch = new DigitalInput(3);
-    Counter counter = new Counter(limitSwitch);
+    DigitalInput limitSwitch = new DigitalInput(3); //Making a new Limit switch
+    Counter counter = new Counter(limitSwitch); //Making a new counter to shout at the limit switch
     
     @Override
     public void initDefaultCommand() {
@@ -57,7 +57,7 @@ public class lift extends Subsystem {
     
     public boolean isSwitchSet() 
     {
-        return counter.get() > 0;
+        return counter.get() > 0; //If triggered, send value elsewhere
     }
 
     public void initializeCounter() 
