@@ -12,6 +12,7 @@
 package org.usfirst.frc4473.PowerUp.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4473.PowerUp.Robot;
+import edu.wpi.first.wpilibj.DigitalInput;
 /**
  *
  */
@@ -37,7 +38,7 @@ public class liftDown extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {    
-    	Robot.lift.initializeCounter();
+    	//Robot.lift.initializeCounter();
     	Robot.lift.stop();
     }
 
@@ -50,7 +51,8 @@ public class liftDown extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() 
     {
-        return Robot.lift.isSwitchSet();
+        //return Robot.lift.isSwitchSet();
+    	return false;
     }
 
     // Called once after isFinished returns true

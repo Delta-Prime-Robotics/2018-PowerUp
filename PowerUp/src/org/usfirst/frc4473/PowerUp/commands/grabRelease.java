@@ -49,7 +49,7 @@ public class grabRelease extends Command {
     @Override
     protected void execute() 
     {
-    	grabbyCompressor.setClosedLoopControl(true); //Check this
+    	//grabbyCompressor.setClosedLoopControl(true); //Check this
     	Robot.arm.Release();
     	}
 
@@ -63,7 +63,7 @@ public class grabRelease extends Command {
     @Override
     protected void end() 
     {
-    	grabbyCompressor.setClosedLoopControl(false);
+    	//grabbyCompressor.setClosedLoopControl(false);
     }
 
     // Called when another command which requires one or more of the same
@@ -71,6 +71,6 @@ public class grabRelease extends Command {
     @Override
     protected void interrupted() 
     {
-    	grabbyCompressor.setClosedLoopControl(false);
+    	//grabbyCompressor.setClosedLoopControl(false);
     }
 }

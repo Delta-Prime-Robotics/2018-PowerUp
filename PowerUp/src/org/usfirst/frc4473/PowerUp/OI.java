@@ -96,6 +96,7 @@ public class OI {
         SmartDashboard.putData("liftUp", new liftUp());
         SmartDashboard.putData("liftDown", new liftDown());
         
+        SmartDashboard.putString("Initialized", ("True"));
         btnLiftUp = new JoystickButton(secondaryGamepad, 4); //Going up
         btnLiftUp.whileHeld(new liftUp());
         
