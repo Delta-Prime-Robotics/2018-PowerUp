@@ -54,27 +54,6 @@ public class lift extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     
-    public boolean isSwitchSet() 
-    {
-        //return counter.get() > 0; //If triggered, send value elsewhere
-    	return false;
-    }
-
-    public void initializeCounter() 
-    {
-        //counter.reset();
-    }
-    
-    //public void up() 
-    //{
-    //	liftVic.set(0.5);   
-	//} 
-    
-    //public void down() 
-    //{
-    	//liftVic.set(-0.5);   
-	//}
-    
     public void stop() 
     {
     	liftVic.set(0);   

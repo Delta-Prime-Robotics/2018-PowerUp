@@ -45,7 +45,7 @@ public class drive extends Subsystem {
 
     public void takeJoystickInput(Joystick leftstick, Joystick rightstick) 
     {
-    	roboDrive.tankDrive(-leftstick.getRawAxis(1), -rightstick.getRawAxis(1));
+    	roboDrive.tankDrive(leftstick.getRawAxis(1), rightstick.getRawAxis(1));
     }
     public void stop() 
     {
