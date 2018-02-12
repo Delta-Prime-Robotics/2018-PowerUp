@@ -132,13 +132,14 @@ public class Robot extends TimedRobot {
         Scheduler.getInstance().run();
        
     }
+    
     public void processHug()
     {
     	if (oi.secondaryGamepad.getRawButton(3))
         {
         	grabEngage.start(); 
         }
-    	if (oi.secondaryGamepad.getRawButton(4))
+    	if (oi.secondaryGamepad.getRawButton(2))
     	{
     		grabRelease.start();
     	}
