@@ -82,7 +82,7 @@ public class RobotMap {
         LiveWindow.addSensor("LiftSystem", "lsLow", liftLow);
         
         // Climb Lift
-        climbliftVic = new VictorSP(3);
+        climbliftVic = new VictorSP(4);
         LiveWindow.addActuator("climblift", "climbliftVic", (VictorSP) climbliftVic);
         climbliftVic.setInverted(false);
         
