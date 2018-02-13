@@ -45,18 +45,28 @@ public class MiddleAutonomousCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+    	Robot.driveEnc.reset();
     	String gameData;
     	gameData = DriverStation.getInstance().getGameSpecificMessage();
-    	 if(gameData.length() > 0)
-         {
-	  if(gameData.charAt(0) == 'L')
-	  {
-		//Drive directions 
-	  } else {
-		//Drive directions
-	  }
-         }
-    	
+    	if(gameData.length() > 0)
+        {
+    		if(gameData.charAt(0) == 'L')
+    		{
+    			//Drive directions
+    			if(Robot.driveEnc.getDistance() <= 120)
+    			{
+    				
+    			}
+    			else
+    			{
+    				Robot.drive.stop();
+    			}
+    		} 
+    		else 
+    		{
+    			//Drive directions
+    		}
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()
