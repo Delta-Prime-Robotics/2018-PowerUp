@@ -105,7 +105,7 @@ public class OI {
         btnClimbDown = new JoystickButton(secondaryGamepad, 5); //Going down
         btnClimbDown.whileHeld(new climbLiftDown());
         
-        btnClimbUp = new JoystickButton(secondaryGamepad, 6); //Going down
+        btnClimbUp = new JoystickButton(secondaryGamepad, 6); //Going up
         btnClimbUp.whileHeld(new climbLiftUp());
         
         
