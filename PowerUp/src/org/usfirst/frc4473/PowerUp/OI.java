@@ -84,14 +84,16 @@ public class OI {
 
 
         // SmartDashboard Buttons
-        SmartDashboard.putData("leftRightAutonomousCommand", new LeftAutonomousCommand());
-        SmartDashboard.putData("middleRightAutonomousCommand", new MiddleAutonomousCommand());
-        SmartDashboard.putData("rightRightAutonomousCommand", new RightAutonomousCommand());
+        SmartDashboard.putData("LeftAutonomousCommand", new LeftAutonomousCommand());
+        SmartDashboard.putData("MiddleAutonomousCommand", new MiddleAutonomousCommand());
+        SmartDashboard.putData("RightAutonomousCommand", new RightAutonomousCommand());
         SmartDashboard.putData("driveTank", new driveTank());
         SmartDashboard.putData("grabEngage", new grabEngage());
         SmartDashboard.putData("grabRelease", new grabRelease());
         SmartDashboard.putData("liftUp", new liftUp());
         SmartDashboard.putData("liftDown", new liftDown());
+        SmartDashboard.putData("climbLiftDown", new climbLiftDown());
+        SmartDashboard.putData("climbLiftUp", new climbLiftUp());
         
         SmartDashboard.putString("Initialized", ("True"));
         btnLiftUp = new JoystickButton(secondaryGamepad, 4); //Going up
@@ -100,11 +102,11 @@ public class OI {
         btnLiftDown = new JoystickButton(secondaryGamepad, 1); //Going down
         btnLiftDown.whileHeld(new liftDown());
         
-   //     btnClimbDown = new JoystickButton(secondaryGamepad, 5); //Going down
-   //     btnClimbDown.whileHeld(new climbLiftDown());
+        btnClimbDown = new JoystickButton(secondaryGamepad, 5); //Going down
+        btnClimbDown.whileHeld(new climbLiftDown());
         
-  //      btnClimbDown = new JoystickButton(secondaryGamepad, 6); //Going down
-  //      btnClimbDown.whileHeld(new climbLiftUp());
+        btnClimbUp = new JoystickButton(secondaryGamepad, 6); //Going down
+        btnClimbUp.whileHeld(new climbLiftUp());
         
         
         btnGrabEngage = new JoystickButton(secondaryGamepad, 2); //Grab

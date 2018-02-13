@@ -10,7 +10,6 @@
 
 
 package org.usfirst.frc4473.PowerUp.commands;
-import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4473.PowerUp.Robot;
 import org.usfirst.frc4473.PowerUp.RobotMap;
@@ -63,6 +62,7 @@ public class grabEngage extends Command {
     @Override
     protected void end() 
     {
+    	
     	//grabbyCompressor.setClosedLoopControl(false);
     }
 

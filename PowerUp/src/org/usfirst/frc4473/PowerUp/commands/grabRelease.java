@@ -63,6 +63,7 @@ public class grabRelease extends Command {
     @Override
     protected void end() 
     {
+    	
     	//grabbyCompressor.setClosedLoopControl(false);
     }
 
