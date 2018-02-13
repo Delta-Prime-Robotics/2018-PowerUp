@@ -16,12 +16,9 @@ import org.usfirst.frc4473.PowerUp.commands.climbLiftUp;
 import org.usfirst.frc4473.PowerUp.commands.driveTank;
 import org.usfirst.frc4473.PowerUp.commands.grabEngage;
 import org.usfirst.frc4473.PowerUp.commands.grabRelease;
-import org.usfirst.frc4473.PowerUp.commands.leftLeftAutonomousCommand;
-import org.usfirst.frc4473.PowerUp.commands.leftRightAutonomousCommand;
-import org.usfirst.frc4473.PowerUp.commands.middleLeftAutonomousCommand;
-import org.usfirst.frc4473.PowerUp.commands.middleRightAutonomousCommand;
-import org.usfirst.frc4473.PowerUp.commands.rightLeftAutonomousCommand;
-import org.usfirst.frc4473.PowerUp.commands.rightRightAutonomousCommand;
+import org.usfirst.frc4473.PowerUp.commands.LeftAutonomousCommand;
+import org.usfirst.frc4473.PowerUp.commands.MiddleAutonomousCommand;
+import org.usfirst.frc4473.PowerUp.commands.RightAutonomousCommand;
 import org.usfirst.frc4473.PowerUp.commands.liftDown;
 import org.usfirst.frc4473.PowerUp.commands.liftUp;
 import edu.wpi.first.wpilibj.Joystick;
@@ -87,12 +84,9 @@ public class OI {
 
 
         // SmartDashboard Buttons
-        SmartDashboard.putData("leftLeftAutonomousCommand", new leftLeftAutonomousCommand());
-        SmartDashboard.putData("leftRightAutonomousCommand", new leftRightAutonomousCommand());
-        SmartDashboard.putData("middleLeftAutonomousCommand", new middleLeftAutonomousCommand());
-        SmartDashboard.putData("middleRightAutonomousCommand", new middleRightAutonomousCommand());
-        SmartDashboard.putData("rightLeftAutonomousCommand", new rightLeftAutonomousCommand());
-        SmartDashboard.putData("rightRightAutonomousCommand", new rightRightAutonomousCommand());
+        SmartDashboard.putData("leftRightAutonomousCommand", new LeftAutonomousCommand());
+        SmartDashboard.putData("middleRightAutonomousCommand", new MiddleAutonomousCommand());
+        SmartDashboard.putData("rightRightAutonomousCommand", new RightAutonomousCommand());
         SmartDashboard.putData("driveTank", new driveTank());
         SmartDashboard.putData("grabEngage", new grabEngage());
         SmartDashboard.putData("grabRelease", new grabRelease());

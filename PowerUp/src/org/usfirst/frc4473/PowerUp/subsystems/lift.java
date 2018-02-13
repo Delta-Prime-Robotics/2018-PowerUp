@@ -63,7 +63,7 @@ public class lift extends Subsystem {
     {
     	if(!liftIsUp())
     	{
-    		liftVic.set(-0.5);
+    		liftVic.set(-1.0);
     	}
     	else if(liftIsUp())
     	{
@@ -74,7 +74,7 @@ public class lift extends Subsystem {
     {
     	if(!liftIsDown())
     	{
-    		liftVic.set(0.5);
+    		liftVic.set(1.0);
     	}
     	else if(liftIsDown())
     	{
