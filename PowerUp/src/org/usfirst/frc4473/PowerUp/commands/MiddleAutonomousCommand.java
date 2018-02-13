@@ -51,7 +51,7 @@ public class MiddleAutonomousCommand extends Command {
          {
 	  if(gameData.charAt(0) == 'L')
 	  {
-		//Drive directions
+		//Drive directions 
 	  } else {
 		//Drive directions
 	  }
