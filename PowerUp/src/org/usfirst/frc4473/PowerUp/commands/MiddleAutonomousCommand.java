@@ -46,27 +46,23 @@ public class MiddleAutonomousCommand extends Command {
     @Override
     protected void execute() {
     	Robot.driveEnc.reset();
-    	String gameData;
-    	gameData = DriverStation.getInstance().getGameSpecificMessage();
+    	
+    	String gameData = DriverStation.getInstance().getGameSpecificMessage();
     	if(gameData.length() > 0)
         {
-    		if(gameData.charAt(0) == 'L')
+    		if(switchIsOnLeft(gameData))
     		{
-    			//Drive directions
-    			if(Robot.driveEnc.getDistance() <= 120)
-    			{
-    				
-    			}
-    			else
-    			{
-    				Robot.drive.stop();
-    			}
-    		} 
+    			doSwitchOnLeft();
+    		}
     		else 
     		{
-    			//Drive directions
+    			doSwitchOnRight();
     		}
-        }
+		} 
+		else 
+		{
+			doSwitchUnknown();
+		}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -84,5 +80,37 @@ public class MiddleAutonomousCommand extends Command {
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+    }
+
+    private boolean switchIsOnLeft(String gameData) {
+    	return (gameData.charAt(0) == 'L');
+    }
+    
+    private void doSwitchOnLeft() {    			
+    	//Drive directions
+		if(Robot.driveEnc.getDistance() <= 120)
+		{
+			
+		}
+		else
+		{
+			Robot.drive.stop();
+		}
+    }
+    
+    private void doSwitchOnRight() {    			
+    	//Drive directions
+		if(Robot.driveEnc.getDistance() <= 120)
+		{
+			
+		}
+		else
+		{
+			Robot.drive.stop();
+		}
+    }
+    
+    private void doSwitchUnknown() {
+		//Drive directions
     }
 }
