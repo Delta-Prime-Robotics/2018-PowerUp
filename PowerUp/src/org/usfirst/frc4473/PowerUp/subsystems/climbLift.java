@@ -1,7 +1,6 @@
 package org.usfirst.frc4473.PowerUp.subsystems;
 
 import org.usfirst.frc4473.PowerUp.RobotMap;
-
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;

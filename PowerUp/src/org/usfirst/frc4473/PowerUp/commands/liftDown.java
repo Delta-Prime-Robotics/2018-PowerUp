@@ -12,7 +12,6 @@
 package org.usfirst.frc4473.PowerUp.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4473.PowerUp.Robot;
-import edu.wpi.first.wpilibj.DigitalInput;
 /**
  *
  */

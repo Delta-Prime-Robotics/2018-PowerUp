@@ -11,8 +11,6 @@
 
 package org.usfirst.frc4473.PowerUp.commands;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.GenericHID;
 import org.usfirst.frc4473.PowerUp.Robot;
 
 /**
