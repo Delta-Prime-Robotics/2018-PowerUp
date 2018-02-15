@@ -97,7 +97,7 @@ public class LeftAutonomousCommand extends Command {
     	//Drive directions
 		if(Robot.driveEnc.getDistance() <= 120)
 		{
-			roboDrive.tankDrive(0.3, 0.3);
+			roboDrive.tankDrive(0.3, 0.3); //Why
 		}
 		else
 		{
