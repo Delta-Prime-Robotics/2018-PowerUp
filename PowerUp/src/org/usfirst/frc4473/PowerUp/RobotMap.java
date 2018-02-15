@@ -36,7 +36,7 @@ public class RobotMap {
     public static SpeedController driverightDriveSpark;
     public static DifferentialDrive driveroboDrive;
     // Claw
-    public static Compressor armgrabbyCompressor;
+    public static Compressor armgrabbyCompressor; //Not sure if we actually use this
     public static Solenoid hug;
     // Claw Lift
     public static SpeedController liftVic;
