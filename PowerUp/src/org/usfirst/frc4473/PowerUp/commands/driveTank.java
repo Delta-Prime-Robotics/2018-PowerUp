@@ -11,6 +11,8 @@
 
 package org.usfirst.frc4473.PowerUp.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc4473.PowerUp.Robot;
 
 /**
@@ -44,7 +46,15 @@ public class driveTank extends Command {
     @Override
     protected void execute() {
     	
-    	Robot.drive.takeJoystickInput(Robot.oi.getLeftStick(), Robot.oi.getRightStick());    
+    	if (Robot.drive.IsAuto == true)
+    	{
+    		
+    		Robot.drive.driveAuto();
+    	}
+    	else
+    	{
+    		Robot.drive.takeJoystickInput(Robot.oi.getLeftStick(), Robot.oi.getRightStick());
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
