@@ -48,7 +48,7 @@ public class RightAutonomousCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	Robot.driveEnc.reset();
+    	Robot.driveEncRight.reset();
     	
     	String gameData = DriverStation.getInstance().getGameSpecificMessage();
     	if(gameData.length() > 0)
@@ -95,7 +95,7 @@ public class RightAutonomousCommand extends Command {
     
     private void doSwitchOnLeft() {    			
     	//Drive directions
-		if(Robot.driveEnc.getDistance() <= 120)
+		if(Robot.driveEncRight.getDistance() <= 120)
 		{
 			if (autoTimer.get() <= 1.0) //Testing a timer 
 			{
@@ -114,7 +114,7 @@ public class RightAutonomousCommand extends Command {
     
     private void doSwitchOnRight() {    			
     	//Drive directions
-		if(Robot.driveEnc.getDistance() <= 120)
+		if(Robot.driveEncRight.getDistance() <= 120)
 		{
 			roboDrive.tankDrive(0.3,0.3);
 		}
