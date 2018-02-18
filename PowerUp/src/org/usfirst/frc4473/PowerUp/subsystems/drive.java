@@ -62,7 +62,7 @@ public class drive extends Subsystem {
     	}
     	SmartDashboard.putString("maxSpeedLeft", (Double.toString(maxSpeedLeft)) );
     	SmartDashboard.putString("maxSpeedRight", (Double.toString(maxSpeedRight)) ); */
-    	roboDrive.tankDrive(-0.8, -0.8); 
+    	roboDrive.tankDrive(-0.9, -0.9); 
     }
     public void driveStraightReverse() {
     	//roboDrive.tankDrive(leftstick.getRawAxis(1), rightstick.getRawAxis(1));
