@@ -11,8 +11,6 @@
 
 package org.usfirst.frc4473.PowerUp.commands;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import org.usfirst.frc4473.PowerUp.Robot;
 
 /**
