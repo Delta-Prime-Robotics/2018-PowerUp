@@ -13,7 +13,7 @@ public class climbLift extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-	private final SpeedController climbliftVic = RobotMap.climbliftVic;
+	private final SpeedController climbLiftSpark = RobotMap.climbliftSpark;
 	
     private final static DigitalInput climbliftHigh = RobotMap.climbliftHigh; //Making a new Limit switch
     private final static DigitalInput climbliftLow = RobotMap.climbliftLow; //Making a new Limit switch
@@ -27,29 +27,29 @@ public class climbLift extends Subsystem {
     
     public void stop() 
     {
-    	climbliftVic.set(0);   
+    	climbLiftSpark.set(0);   
     } 
     
     public void up()
     {
     	if(!liftIsUp())
     	{
-    		climbliftVic.set(-0.5);
+    		climbLiftSpark.set(-0.5);
     	}
     	else if(liftIsUp())
     	{
-    		climbliftVic.set(0);   
+    		climbLiftSpark.set(0);   
         }
 	}
     public void down()
     {
     	if(!liftIsDown())
     	{
-    		climbliftVic.set(0.5);
+    		climbLiftSpark.set(0.5);
     	}
     	else if(liftIsDown())
     	{
-    		climbliftVic.set(0);   
+    		climbLiftSpark.set(0);   
         }
 	}
     
