@@ -102,7 +102,6 @@ public class MiddleAutonomousCommand extends Command {
 		{
     		SmartDashboard.putString("Initialized", (Integer.toString(count++)) );
     		Robot.drive.IsAuto = true;
-    		Timer.delay(0.1);
     		Robot.drive.driveAuto();
 		}
 		else

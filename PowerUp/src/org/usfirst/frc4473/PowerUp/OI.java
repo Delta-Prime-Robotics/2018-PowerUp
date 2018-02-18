@@ -13,6 +13,8 @@ package org.usfirst.frc4473.PowerUp;
 
 import org.usfirst.frc4473.PowerUp.commands.climbLiftDown;
 import org.usfirst.frc4473.PowerUp.commands.climbLiftUp;
+import org.usfirst.frc4473.PowerUp.commands.driveForward;
+import org.usfirst.frc4473.PowerUp.commands.driveReverse;
 import org.usfirst.frc4473.PowerUp.commands.driveTank;
 import org.usfirst.frc4473.PowerUp.commands.grabEngage;
 import org.usfirst.frc4473.PowerUp.commands.grabRelease;
@@ -94,6 +96,10 @@ public class OI {
         SmartDashboard.putData("liftDown", new liftDown());
         SmartDashboard.putData("climbLiftDown", new climbLiftDown());
         SmartDashboard.putData("climbLiftUp", new climbLiftUp());
+        
+        SmartDashboard.putData("driveForward", new driveForward());
+        SmartDashboard.putData("driveReverse", new driveReverse());
+        
         
         //SmartDashboard.putString("Initialized", ("True"));
         

@@ -72,9 +72,10 @@ public class Robot extends TimedRobot {
         chooser = new SendableChooser<Command>();
         
         driveEncLeft = new Encoder(2,3,false, Encoder.EncodingType.k2X);
-        SmartDashboard.put("encoderLeft", driveEncLeft); 
+        SmartDashboard.putData("encoderLeft", driveEncLeft); 
         
         driveEncRight = new Encoder(0,1,false, Encoder.EncodingType.k2X);
+        SmartDashboard.putData("encoderRight", driveEncRight); 
         
 
         
