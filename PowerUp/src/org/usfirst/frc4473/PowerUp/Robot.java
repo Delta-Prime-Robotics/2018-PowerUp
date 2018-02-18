@@ -16,7 +16,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import org.usfirst.frc4473.PowerUp.commands.LeftAutonomousCommand;
 import org.usfirst.frc4473.PowerUp.commands.MiddleAutonomousCommand;
 import org.usfirst.frc4473.PowerUp.commands.RightAutonomousCommand;
@@ -67,6 +66,7 @@ public class Robot extends TimedRobot {
         RobotMap.init();
         
         // INIT needs to be called before everything.
+        
         
         chooser = new SendableChooser<Command>();
         

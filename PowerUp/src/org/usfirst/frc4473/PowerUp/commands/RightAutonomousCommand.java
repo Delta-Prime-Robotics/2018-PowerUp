@@ -95,16 +95,9 @@ public class RightAutonomousCommand extends Command {
     
     private void doSwitchOnLeft() {    			
     	//Drive directions
-		if(Robot.driveEncRight.getDistance() <= 120)
+		if(Robot.driveEncRight.getDistance() <= 50)
 		{
-			if (autoTimer.get() <= 1.0) //Testing a timer 
-			{
-				roboDrive.tankDrive(0.3, 0.3);
-			}
-			else
-			{
-				Robot.drive.stop();
-			}
+			Robot.drive.driveStraightForward();
 		}
 		else
 		{
@@ -114,9 +107,9 @@ public class RightAutonomousCommand extends Command {
     
     private void doSwitchOnRight() {    			
     	//Drive directions
-		if(Robot.driveEncRight.getDistance() <= 120)
+		if(Robot.driveEncRight.getDistance() <= 50)
 		{
-			roboDrive.tankDrive(0.3,0.3);
+			Robot.drive.driveStraightForward();
 		}
 		else
 		{

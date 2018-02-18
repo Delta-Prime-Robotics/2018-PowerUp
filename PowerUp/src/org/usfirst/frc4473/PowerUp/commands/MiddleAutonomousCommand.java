@@ -100,13 +100,14 @@ public class MiddleAutonomousCommand extends Command {
     	//Drive directions
     	if(Robot.driveEncRight.getDistance() <= 50)
 		{
-    		SmartDashboard.putString("Initialized", (Integer.toString(count++)) );
-    		Robot.drive.IsAuto = true;
-    		Robot.drive.driveAuto();
+    		//SmartDashboard.putString("Initialized", (Integer.toString(count++)) );
+    		//Robot.drive.IsAuto = true;
+    		//Robot.drive.driveAuto();
+    		Robot.drive.driveStraightForward();
 		}
 		else
 		{
-			SmartDashboard.putString("Initialized", ("Not Driving"));
+			//SmartDashboard.putString("Initialized", ("Not Driving"));
 			Robot.drive.stop();
 			
 		}
@@ -114,9 +115,9 @@ public class MiddleAutonomousCommand extends Command {
     
     private void doSwitchOnRight() {    			
     	//Drive directions
-    	if(Robot.driveEncRight.getDistance() <= 120)
+    	if(Robot.driveEncRight.getDistance() <= 50)
 		{
-			roboDrive.tankDrive(-0.3,-0.3); 
+    		Robot.drive.driveStraightForward();
 		}
 		else
 		{

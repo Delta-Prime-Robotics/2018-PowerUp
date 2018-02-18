@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4473.PowerUp.Robot;
 import org.usfirst.frc4473.PowerUp.RobotMap;
+import org.usfirst.frc4473.PowerUp.subsystems.drive;
+
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
@@ -95,9 +97,10 @@ public class LeftAutonomousCommand extends Command {
     
     private void doSwitchOnLeft() {    			
     	//Drive directions
-		if(Robot.driveEncRight.getDistance() <= 120)
+		if(Robot.driveEncRight.getDistance() <= 50)
 		{
-			roboDrive.tankDrive(0.3, 0.3); //Why
+			Robot.drive.driveStraightForward();
+			
 		}
 		else
 		{
@@ -108,16 +111,9 @@ public class LeftAutonomousCommand extends Command {
     
     private void doSwitchOnRight() {    			
     	//Drive directions
-		if(Robot.driveEncRight.getDistance() <= 120)
+		if(Robot.driveEncRight.getDistance() <= 50)
 		{
-			if (autoTimer.get() <= 1.0) //Testing a timer 
-			{
-				roboDrive.tankDrive(0.3, 0.3);
-			}
-			else
-			{
-				Robot.drive.stop();
-			}
+			Robot.drive.driveStraightForward();
 		}
 		else
 		{
