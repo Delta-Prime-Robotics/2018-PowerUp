@@ -87,13 +87,13 @@ public class RobotMap {
         
         // Climb Lift
         climbliftSpark = new Spark(3);
-        LiveWindow.addActuator("climblift", "climbliftVic", (VictorSP) climbliftSpark);
+        //LiveWindow.addActuator("climblift", "climbliftVic", (VictorSP) climbliftSpark);
         climbliftSpark.setInverted(false);
         
         climbliftHigh = new DigitalInput(6);
-        LiveWindow.addSensor("ClimbSystem", "lsHigh", climbliftHigh);
+        //LiveWindow.addSensor("ClimbSystem", "lsHigh", climbliftHigh);
         climbliftLow = new DigitalInput(7);
-        LiveWindow.addSensor("ClimbSystem", "lsHigh", climbliftLow);
+        //LiveWindow.addSensor("ClimbSystem", "lsHigh", climbliftLow);
         
         // Cameras
         camera1 = CameraServer.getInstance().startAutomaticCapture(0);
