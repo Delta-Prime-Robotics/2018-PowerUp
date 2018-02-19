@@ -95,35 +95,43 @@ public class RightAutonomousCommand extends Command {
     
     private void doSwitchOnLeft() {    			
     	//Drive directions
-		if(Robot.driveEncRight.getDistance() <= 120)
+    	if(Robot.driveEncRight.getDistance() <= 120 && Robot.driveEncLeft.getDistance() <= 120) //Change
 		{
 			Robot.drive.straight();
 		}
+		else if(Robot.imu.getAngleZ() <= 90)
+		{
+			Robot.drive.turn90Right();
+			
+		}
 		else
 		{
-			Robot.drive.stop();
+			Robot.lift.up();
+			Timer.delay(1);
+			Robot.arm.Release();
 		}
     }
     
     private void doSwitchOnRight() {    			
     	//Drive directions
-    	if(Robot.driveEncRight.getDistance() <= 120)
+    	if(Robot.driveEncRight.getDistance() <= 120 && Robot.driveEncLeft.getDistance() <= 120)
 		{
 			Robot.drive.straight();
-			Robot.driveEncRight.reset();
 		}
-		else if(Robot.driveEncRight.getDistance() <= 240)
+		else if(Robot.imu.getAngleZ() <= 90)
 		{
 			Robot.drive.turn90Left();
+			
 		}
 		else
 		{
-			Robot.drive.stop();
-			Robot.driveEncRight.reset();
+			Robot.lift.up();
+			Timer.delay(1);
+			Robot.arm.Release();
 		}
     }
     
     private void doSwitchUnknown() {
-		//Drive directions
+    	roboDrive.tankDrive(0, 0);
     }
 }

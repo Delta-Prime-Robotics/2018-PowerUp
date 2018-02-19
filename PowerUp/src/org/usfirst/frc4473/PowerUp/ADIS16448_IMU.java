@@ -5,7 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package com.analog.adis16448.frc;
+package org.usfirst.frc4473.PowerUp;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

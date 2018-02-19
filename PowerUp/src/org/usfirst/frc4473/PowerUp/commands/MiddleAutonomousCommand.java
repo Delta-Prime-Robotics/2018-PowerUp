@@ -98,35 +98,43 @@ public class MiddleAutonomousCommand extends Command {
     
     private void doSwitchOnLeft() {    			
     	//Drive directions
-    	if(Robot.driveEncRight.getDistance() <= 120)
+    	if(Robot.driveEncRight.getDistance() <= 120 && Robot.driveEncLeft.getDistance() <= 120) //Change
 		{
-    		//SmartDashboard.putString("Initialized", (Integer.toString(count++)) );
-    		//Robot.drive.IsAuto = true;
-    		//Robot.drive.driveAuto();
-    		Robot.drive.straight();
+			Robot.drive.straight();
+		}
+		else if(Robot.imu.getAngleZ() <= 90)
+		{
+			Robot.drive.turn90Right();
+			
 		}
 		else
 		{
-			//SmartDashboard.putString("Initialized", ("Not Driving"));
-			Robot.drive.stop();
-			
+			Robot.lift.up();
+			Timer.delay(1);
+			Robot.arm.Release();
 		}
     }
     
     private void doSwitchOnRight() {    			
     	//Drive directions
-    	if(Robot.driveEncRight.getDistance() <= 120)
+    	if(Robot.driveEncRight.getDistance() <= 120 && Robot.driveEncLeft.getDistance() <= 120) //Change
 		{
-    		Robot.drive.straight();
+			Robot.drive.straight();
+		}
+		else if(Robot.imu.getAngleZ() <= 90)
+		{
+			Robot.drive.turn90Right();
+			
 		}
 		else
 		{
-			Robot.drive.stop();
-			
+			Robot.lift.up();
+			Timer.delay(1);
+			Robot.arm.Release();
 		}
     }
     
     private void doSwitchUnknown() {
-		//Drive directions
+		roboDrive.tankDrive(0, 0);
     }
 }
