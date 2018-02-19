@@ -87,7 +87,7 @@ public class RobotMap {
         
         // Climb Lift
         climbliftVic = new Spark(3);
-        //LiveWindow.addActuator("climblift", "climbliftVic", (VictorSP) climbliftSpark);
+        //LiveWindow.addActuator("ClimbLift", "climbliftVic", (VictorSP) climbliftSpark);
         climbliftVic.setInverted(false);
         
         climbliftHigh = new DigitalInput(7);

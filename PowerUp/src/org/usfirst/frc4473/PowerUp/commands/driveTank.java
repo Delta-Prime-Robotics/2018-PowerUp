@@ -43,16 +43,7 @@ public class driveTank extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	
-    	if (Robot.drive.IsAuto == true)
-    	{
-    		
-    		Robot.drive.driveAuto();
-    	}
-    	else
-    	{
-    		Robot.drive.takeJoystickInput(Robot.oi.getLeftStick(), Robot.oi.getRightStick());
-    	}
+    	Robot.drive.takeJoystickInput(Robot.oi.getLeftStick(), Robot.oi.getRightStick());
     }
 
     // Make this return true when this Command no longer needs to run execute()
