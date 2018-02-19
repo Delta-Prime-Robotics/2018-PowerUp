@@ -34,7 +34,7 @@ public class climbLift extends Subsystem {
     {
     	if(!liftIsUp())
     	{
-    		climbLiftSpark.set(-0.5);
+    		climbLiftSpark.set(1.0);
     	}
     	else if(liftIsUp())
     	{
@@ -45,7 +45,7 @@ public class climbLift extends Subsystem {
     {
     	if(!liftIsDown())
     	{
-    		climbLiftSpark.set(0.5);
+    		climbLiftSpark.set(-1.0);
     	}
     	else if(liftIsDown())
     	{

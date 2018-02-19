@@ -90,9 +90,9 @@ public class RobotMap {
         //LiveWindow.addActuator("climblift", "climbliftVic", (VictorSP) climbliftSpark);
         climbliftSpark.setInverted(false);
         
-        climbliftHigh = new DigitalInput(6);
+        climbliftHigh = new DigitalInput(7);
         //LiveWindow.addSensor("ClimbSystem", "lsHigh", climbliftHigh);
-        climbliftLow = new DigitalInput(7);
+        climbliftLow = new DigitalInput(6);
         //LiveWindow.addSensor("ClimbSystem", "lsHigh", climbliftLow);
         
         // Cameras
