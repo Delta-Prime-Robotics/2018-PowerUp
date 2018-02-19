@@ -43,7 +43,7 @@ public class RobotMap {
     public static DigitalInput liftHigh;
     public static DigitalInput liftLow;
     // Climb Lift
-    public static SpeedController climbliftSpark;
+    public static SpeedController climbliftVic;
     public static DigitalInput climbliftHigh;
     public static DigitalInput climbliftLow;
     // Cameras
@@ -86,9 +86,9 @@ public class RobotMap {
         //LiveWindow.addSensor("LiftSystem", "lsLow", liftLow);
         
         // Climb Lift
-        climbliftSpark = new Spark(3);
+        climbliftVic = new Spark(3);
         //LiveWindow.addActuator("climblift", "climbliftVic", (VictorSP) climbliftSpark);
-        climbliftSpark.setInverted(false);
+        climbliftVic.setInverted(false);
         
         climbliftHigh = new DigitalInput(7);
         //LiveWindow.addSensor("ClimbSystem", "lsHigh", climbliftHigh);
