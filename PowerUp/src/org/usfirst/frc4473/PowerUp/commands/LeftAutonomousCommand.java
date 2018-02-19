@@ -100,12 +100,16 @@ public class LeftAutonomousCommand extends Command {
 		if(Robot.driveEncRight.getDistance() <= 120)
 		{
 			Robot.drive.straight();
-			
+			Robot.driveEncRight.reset();
+		}
+		else if(Robot.driveEncRight.getDistance() <= 240)
+		{
+			Robot.drive.turn90Right();
 		}
 		else
 		{
 			Robot.drive.stop();
-			
+			Robot.driveEncRight.reset();
 		}
     }
     

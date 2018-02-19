@@ -107,13 +107,19 @@ public class RightAutonomousCommand extends Command {
     
     private void doSwitchOnRight() {    			
     	//Drive directions
-		if(Robot.driveEncRight.getDistance() <= 120)
+    	if(Robot.driveEncRight.getDistance() <= 120)
 		{
 			Robot.drive.straight();
+			Robot.driveEncRight.reset();
+		}
+		else if(Robot.driveEncRight.getDistance() <= 240)
+		{
+			Robot.drive.turn90Left();
 		}
 		else
 		{
 			Robot.drive.stop();
+			Robot.driveEncRight.reset();
 		}
     }
     

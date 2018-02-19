@@ -62,7 +62,7 @@ public class drive extends Subsystem {
     	}
     }
     public void turn90Left() {
-    	while(Robot.driveEncLeft.getDistance() > 50) 
+    	while(Robot.driveEncRight.getDistance() > 50) 
     	{
     		roboDrive.tankDrive(-0.75, 0.75);
     	}
