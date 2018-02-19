@@ -52,6 +52,8 @@ public class Robot extends TimedRobot {
     
     public static Encoder driveEncLeft;
     public static Encoder driveEncRight;
+    
+    com.analog.adis16448.frc.ADIS16448_IMU imu;
   
     //DigitalInput limitSwitch;
     

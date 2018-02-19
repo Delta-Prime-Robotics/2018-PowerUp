@@ -117,7 +117,7 @@ public class MiddleAutonomousCommand extends Command {
     	//Drive directions
     	if(Robot.driveEncRight.getDistance() <= 120)
 		{
-    		Robot.drive.driveStraightForward();
+    		Robot.drive.straight();
 		}
 		else
 		{
