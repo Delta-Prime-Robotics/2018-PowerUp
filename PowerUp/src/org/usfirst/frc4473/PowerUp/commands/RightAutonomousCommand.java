@@ -102,7 +102,6 @@ public class RightAutonomousCommand extends Command {
 		else if(Robot.imu.getAngleZ() <= 90)
 		{
 			Robot.drive.turn90Right();
-			
 		}
 		else
 		{
@@ -120,8 +119,7 @@ public class RightAutonomousCommand extends Command {
 		}
 		else if(Robot.imu.getAngleZ() <= 90)
 		{
-			Robot.drive.turn90Left();
-			
+			Robot.drive.turn90Left();	
 		}
 		else
 		{
