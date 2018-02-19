@@ -49,7 +49,7 @@ public class RightAutonomousCommand extends Command {
     @Override
     protected void execute() {
     	Robot.driveEncRight.reset();
-    	
+    	Robot.driveEncLeft.reset();
     	String gameData = DriverStation.getInstance().getGameSpecificMessage();
     	if(gameData.length() > 0)
         {
@@ -95,7 +95,7 @@ public class RightAutonomousCommand extends Command {
     
     private void doSwitchOnLeft() {    			
     	//Drive directions
-		if(Robot.driveEncRight.getDistance() <= 50)
+		if(Robot.driveEncRight.getDistance() <= 120)
 		{
 			Robot.drive.driveStraightForward();
 		}
@@ -107,7 +107,7 @@ public class RightAutonomousCommand extends Command {
     
     private void doSwitchOnRight() {    			
     	//Drive directions
-		if(Robot.driveEncRight.getDistance() <= 50)
+		if(Robot.driveEncRight.getDistance() <= 120)
 		{
 			Robot.drive.driveStraightForward();
 		}
