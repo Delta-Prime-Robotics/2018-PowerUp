@@ -82,12 +82,12 @@ public class lift extends Subsystem {
         }
 	}
     
-    public static boolean liftIsUp()
+    public boolean liftIsUp()
     {
     	return !liftHigh.get();
     }
 
-    public static boolean liftIsDown()
+    public boolean liftIsDown()
     {
     	return !liftLow.get();
     }
