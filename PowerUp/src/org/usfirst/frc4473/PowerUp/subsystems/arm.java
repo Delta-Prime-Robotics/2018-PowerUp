@@ -47,11 +47,11 @@ public class arm extends Subsystem {
    
     public void Grab()
     {
-    	RobotMap.hug.set(true);
+    	RobotMap.hug.set(false);
     }
     public void Release()
     {
-    	RobotMap.hug.set(false);
+    	RobotMap.hug.set(true);
     } 
 }
 

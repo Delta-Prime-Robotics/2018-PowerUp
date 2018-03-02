@@ -49,7 +49,7 @@ public class grabRelease extends Command {
     {
     	//grabbyCompressor.setClosedLoopControl(true); //Check this
     	Robot.arm.Release();
-    	}
+	}
 
     // Make this return true when this Command no longer needs to run execute()
     @Override

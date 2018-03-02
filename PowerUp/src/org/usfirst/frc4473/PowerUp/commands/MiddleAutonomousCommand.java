@@ -46,14 +46,15 @@ public class MiddleAutonomousCommand extends CommandGroup {
     	String gameData = DriverStation.getInstance().getGameSpecificMessage();
     	if(gameData.length() > 0)
         {
+    		SmartDashboard.putString("AutonomousCommand", "Middle");  
     		// commands common to both switch positions
-			this.addSequential(new driveToDistance(12));
+			//this.addSequential(new driveToDistance(12));
 			SmartDashboard.putString("gameData", gameData);
     		
     		if(switchIsOnLeft(gameData))
     		{	
     			//Add commands unique to switch on Left
-    			//this.addSequential(new turnToAngle(-90));
+    			this.addSequential(new turnToAngle(-90));
     			//this.addSequential(new driveToDistance(40));
     			//this.addSequential(new turnToAngle(0));
     		}
@@ -70,7 +71,7 @@ public class MiddleAutonomousCommand extends CommandGroup {
     		//this.addSequential(new grabRelease());
 		} 
 		else 
-		{			
+		{
 			//Something's messed up. Add command for just crossing the line
 			//this.addSequential(new driveToDistance(120));
 			SmartDashboard.putString("gameData", "no data");

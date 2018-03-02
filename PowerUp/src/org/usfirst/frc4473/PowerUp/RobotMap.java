@@ -46,7 +46,7 @@ public class RobotMap {
     public static Compressor armgrabbyCompressor;
     public static Solenoid hug;
     // Claw Lift
-    public static SpeedController liftSpark;
+    public static SpeedController liftVic;
     public static DigitalInput liftHigh;
     public static DigitalInput liftLow;
     // Climb Lift
@@ -78,7 +78,7 @@ public class RobotMap {
         driveroboDrive.setMaxOutput(1.0);
 
         //TODO: Copied from Steamworks. May need to tweak this value
-    	double dEncDistancePerPulse = ( ( 6*Math.PI ) / 360 );
+    	double dEncDistancePerPulse = 19.25 / 360; //( ( 6*Math.PI ) / 360 );
     	
         driveEncLeft = new Encoder(2,3,true, Encoder.EncodingType.k2X);
         driveEncLeft.setDistancePerPulse(dEncDistancePerPulse);
@@ -97,9 +97,9 @@ public class RobotMap {
         hug = new Solenoid(0); //Values to check
         
         // Claw Lift
-        liftSpark = new Spark(2);
+        liftVic = new VictorSP(2);
         //LiveWindow.addActuator("lift", "liftVic", (VictorSP) liftVic);
-        liftSpark.setInverted(false);
+        liftVic.setInverted(false);
         
         liftHigh = new DigitalInput(8);
         //LiveWindow.addSensor("LiftSystem", "lsHigh", liftHigh);

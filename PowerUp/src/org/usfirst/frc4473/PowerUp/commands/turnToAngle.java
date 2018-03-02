@@ -2,65 +2,67 @@ package org.usfirst.frc4473.PowerUp.commands;
 
 import org.usfirst.frc4473.PowerUp.Robot;
 
-import edu.wpi.first.wpilibj.PIDController;
-import edu.wpi.first.wpilibj.PIDSource;
-import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
 public class turnToAngle extends Command {
 
-	private PIDController pid;
+	double targetAngle;
+	boolean isDone = false;
 	
-    public turnToAngle(double targetAngle) {
+    public turnToAngle(double angle) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.drive);
-    	    	 
-        pid = new PIDController(0.01, 0, 0, new PIDSource() {
-        	PIDSourceType m_sourceType = PIDSourceType.kDisplacement;
-        	
-        	@Override
-        	public double pidGet() {
-        		return Robot.drive.getAngle();
-        	}
-        	
-        	@Override
-        	public void setPIDSourceType(PIDSourceType sourceType) {
-        		m_sourceType = sourceType;
-        	}
-        	
-        	@Override
-        	public PIDSourceType getPIDSourceType() {
-        		return m_sourceType;
-        	}
-        	
-        }, rotation -> Robot.drive.rotate(rotation));
-
-        pid.setAbsoluteTolerance(0.02);
-        pid.setSetpoint(targetAngle);    	
+    	
+    	targetAngle = angle;
+        SmartDashboard.putNumber("targetAngle",targetAngle);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	pid.reset();
-    	pid.enable();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	double currentAngle = Robot.drive.getAngle();
+    	  
+    	double diff = (targetAngle - currentAngle);
+    	
+    	if (Math.abs(diff) < 5) {
+    		isDone = true;
+    		Robot.drive.stop();
+    		return;
+    	}
+    	
+    	double sign = diff / Math.abs(diff);
+    	
+    	double rate = sign * 0.6;
+    	
+    	if (diff < 20) {
+    		rate = sign * 0.45;
+    	}
+    	    	
+    	SmartDashboard.putNumber("r8", rate);
+    	
+    	Robot.drive.rotate(rate);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return pid.onTarget();
+    	return isDone;
+//    	double currentAngle = Robot.drive.getAngle();
+//    	
+//    	double diff = Math.abs(currentAngle - targetAngle);
+//    	SmartDashboard.putNumber("DIFF", diff);
+//        return (diff < 2);
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	pid.disable();
     	Robot.drive.stop();
     }
 

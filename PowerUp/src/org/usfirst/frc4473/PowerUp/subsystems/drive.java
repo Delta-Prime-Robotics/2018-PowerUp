@@ -94,7 +94,14 @@ public class drive extends Subsystem {
     }
     
     public void rotate(double rotation) {
+    	rotation = Math.max(rotation, -1);
+    	rotation = Math.min(rotation, 1);
+    	
+    	SmartDashboard.putNumber("rotation",rotation);
+        SmartDashboard.putNumber("AngleFrom0", imu.getAngleZ());
+        
     	roboDrive.arcadeDrive(0, rotation);
+    	
     }
     
 //    public void driveAuto()

@@ -34,7 +34,7 @@ public class driveToDistance extends Command {
     	
     	if (targetDistance > 0) {
     		if (Robot.drive.getDistance() < targetDistance) {
-    			Robot.drive.driveAtAngle(0.5, initAngle);
+    			Robot.drive.driveAtAngle(-0.65, initAngle);
     		}
     		else {
     	        SmartDashboard.putNumber("distance reached",Robot.drive.getDistance());
@@ -43,7 +43,7 @@ public class driveToDistance extends Command {
     	}
     	else {
 			if (Robot.drive.getDistance() > targetDistance) {
-				Robot.drive.driveAtAngle(-0.5, initAngle);
+				Robot.drive.driveAtAngle(0.65, initAngle);
 			}
 			else {
 		        SmartDashboard.putNumber("distance reached",Robot.drive.getDistance());

@@ -22,7 +22,7 @@ public class switchHeight extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (counter < 200)
+    	if (counter < 100)
     	{
     		Robot.lift.up();
     		counter++;
