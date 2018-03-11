@@ -53,22 +53,24 @@ public class MiddleAutonomousCommand extends CommandGroup {
     		
     		if(switchIsOnLeft(gameData))
     		{	
-    			//Add commands unique to switch on Left
-    			this.addSequential(new turnToAngle(-90));
-    			//this.addSequential(new driveToDistance(40));
-    			//this.addSequential(new turnToAngle(0));
+    			this.addSequential(new driveToDistance(24)); //Forward
+    			this.addSequential(new turnToAngle(-90)); //Turn left
+    			this.addSequential(new driveToDistance(71)); //Forward(going left relative to alliance wall)
+    			this.addSequential(new turnToAngle(0)); //Turn right
+    			this.addSequential(new driveToDistance(101)); //Forward to switch
     		}
     		else 
     		{
     			//Add commands unique to switch on Right
-    			//this.addSequential(new turnToAngle(90));
-    			//this.addSequential(new driveToDistance(30));
-    			//this.addSequential(new turnToAngle(0));
+    			this.addSequential(new driveToDistance(24)); //Forward
+    			this.addSequential(new turnToAngle(90)); //Turn right
+    			this.addSequential(new driveToDistance(37)); //Forward(going right relative to alliance wall)
+    			this.addSequential(new turnToAngle(0)); //Turn left
+    			this.addSequential(new driveToDistance(101)); //Forward to switch
     		}
     		// commands common to both switch positions
-    		//this.addSequential(new switchHeight());
-			//this.addSequential(new driveToDistance(40));
-    		//this.addSequential(new grabRelease());
+    		this.addSequential(new switchHeight()); //Lift up
+    		this.addSequential(new grabRelease()); //Claw release
 		} 
 		else 
 		{

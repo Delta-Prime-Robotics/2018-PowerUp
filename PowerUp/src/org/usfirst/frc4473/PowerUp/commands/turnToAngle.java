@@ -42,7 +42,7 @@ public class turnToAngle extends Command {
     	
     	double rate = sign * 0.6;
     	
-    	if (diff < 20) {
+    	if (Math.abs(diff) < 20) {
     		rate = sign * 0.45;
     	}
     	    	

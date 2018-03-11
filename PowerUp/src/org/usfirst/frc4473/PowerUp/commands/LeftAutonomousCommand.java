@@ -53,7 +53,7 @@ public class LeftAutonomousCommand extends CommandGroup {
 			SmartDashboard.putString("gameData", gameData);
 			
     		// commands common to both switch positions
-			this.addSequential(new driveToDistance(168)); 
+			this.addSequential(new driveToDistance(140)); 
     		
     		if(switchIsOnLeft(gameData))
     		{
