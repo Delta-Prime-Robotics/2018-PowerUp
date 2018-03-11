@@ -51,11 +51,12 @@ public class RightAutonomousCommand extends CommandGroup {
 			SmartDashboard.putString("gameData", gameData);
 			
     		// commands common to both switch positions
-			this.addSequential(new driveToDistance(140)); 
+			//this.addSequential(new driveToDistance(140)); 
     		
     		if(switchIsOnRight(gameData))
     		{
     			//Add commands unique to switch on Right
+    			this.addSequential(new driveToDistance(114)); 
     			this.addSequential(new turnToAngle(-90));
     		}
     		else 
@@ -71,7 +72,7 @@ public class RightAutonomousCommand extends CommandGroup {
     		}
     		// commands common to both switch positions
     		this.addSequential(new switchHeight());
-			this.addSequential(new driveToDistance(18));
+			//this.addSequential(new driveToDistance(18));
     		this.addSequential(new grabRelease());
 		} 
 		else 
