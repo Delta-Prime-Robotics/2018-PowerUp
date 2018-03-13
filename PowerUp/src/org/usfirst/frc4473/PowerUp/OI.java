@@ -86,9 +86,9 @@ public class OI {
 
 
         // SmartDashboard Buttons
-        SmartDashboard.putData("LeftAutonomousCommand", new LeftAutonomousCommand());
-        SmartDashboard.putData("MiddleAutonomousCommand", new MiddleAutonomousCommand()); //Try commenting this out
-        SmartDashboard.putData("RightAutonomousCommand", new RightAutonomousCommand());
+//        SmartDashboard.putData("LeftAutonomousCommand", new LeftAutonomousCommand());
+//        SmartDashboard.putData("MiddleAutonomousCommand", new MiddleAutonomousCommand()); //Try commenting this out
+//        SmartDashboard.putData("RightAutonomousCommand", new RightAutonomousCommand());
         SmartDashboard.putData("driveTank", new driveTank());
         SmartDashboard.putData("grabEngage", new grabEngage());
         SmartDashboard.putData("grabRelease", new grabRelease());

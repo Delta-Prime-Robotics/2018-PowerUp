@@ -25,7 +25,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class MiddleAutonomousCommand extends CommandGroup {
 
-    public MiddleAutonomousCommand() {
+    public MiddleAutonomousCommand(String gameData) {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -43,7 +43,6 @@ public class MiddleAutonomousCommand extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	
-    	String gameData = DriverStation.getInstance().getGameSpecificMessage();
     	if(gameData.length() > 0)
         {
     		SmartDashboard.putString("AutonomousCommand", "Middle");  
@@ -55,18 +54,18 @@ public class MiddleAutonomousCommand extends CommandGroup {
     		{	
     			this.addSequential(new driveToDistance(24)); //Forward
     			this.addSequential(new turnToAngle(-90)); //Turn left
-    			this.addSequential(new driveToDistance(71)); //Forward(going left relative to alliance wall)
+    			this.addSequential(new driveToDistance(54)); //71 Forward(going left relative to alliance wall)
     			this.addSequential(new turnToAngle(0)); //Turn right
-    			this.addSequential(new driveToDistance(101)); //Forward to switch
+    			this.addSequential(new driveToDistance(43)); //101 Forward to switch
     		}
     		else 
     		{
     			//Add commands unique to switch on Right
     			this.addSequential(new driveToDistance(24)); //Forward
     			this.addSequential(new turnToAngle(90)); //Turn right
-    			this.addSequential(new driveToDistance(37)); //Forward(going right relative to alliance wall)
+    			this.addSequential(new driveToDistance(20)); //37 Forward(going right relative to alliance wall)
     			this.addSequential(new turnToAngle(0)); //Turn left
-    			this.addSequential(new driveToDistance(101)); //Forward to switch
+    			this.addSequential(new driveToDistance(43)); //101 Forward to switch
     		}
     		// commands common to both switch positions
     		this.addSequential(new switchHeight()); //Lift up

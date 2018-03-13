@@ -44,9 +44,6 @@ public class drive extends Subsystem {
     private final Encoder driveEncRight = RobotMap.driveEncRight;
     
     
-    private double maxSpeedLeft = 0.0;
-    private double maxSpeedRight = 0.0;
-    
 //    private double dLRawDriveSpeed;
 //    private double dRRawDriveSpeed;
     
@@ -79,7 +76,7 @@ public class drive extends Subsystem {
     public void driveAtAngle(double speed, double targetAngle) {
     	double rotation = 0;
     	
-    	double scaleFactor = 0.03; // Might need to tweak this value. Should be fast without oscillating.
+    	double scaleFactor = 0.09; // Might need to tweak this value. Should be fast without oscillating.
     	
     	double angle = imu.getAngleZ();
     	
@@ -87,8 +84,10 @@ public class drive extends Subsystem {
     	// Also, target angle might be different but equivalent to the current angle (e.g. -90 and +270)
     	rotation = (targetAngle - angle) * scaleFactor;
 
-        SmartDashboard.putNumber("rotation",rotation);
-        SmartDashboard.putNumber("speed",speed);
+        SmartDashboard.putNumber("driveAtAngle-rotation",rotation);
+        SmartDashboard.putNumber("driveAtAngle-speed",speed);
+        SmartDashboard.putNumber("driveAtAngle-targetAngle", targetAngle);
+        SmartDashboard.putNumber("driveAtAngle-angle", angle);
     	
     	roboDrive.arcadeDrive(speed, rotation);
     }
@@ -97,8 +96,8 @@ public class drive extends Subsystem {
     	rotation = Math.max(rotation, -1);
     	rotation = Math.min(rotation, 1);
     	
-    	SmartDashboard.putNumber("rotation",rotation);
-        SmartDashboard.putNumber("AngleFrom0", imu.getAngleZ());
+    	SmartDashboard.putNumber("rotate-rotation",rotation);
+        SmartDashboard.putNumber("rotate-getAngleZ", imu.getAngleZ());
         
     	roboDrive.arcadeDrive(0, rotation);
     	
@@ -118,21 +117,23 @@ public class drive extends Subsystem {
     
     public void takeJoystickInput(Joystick leftstick, Joystick rightstick) 
     {
-    	roboDrive.tankDrive(leftstick.getRawAxis(1), rightstick.getRawAxis(1));
+    	double leftSpeed = leftstick.getRawAxis(1);
+    	double rightSpeed = rightstick.getRawAxis(1); 
+    	double throttle = rightstick.getRawAxis(2)/4 + 0.75;
     	
-    	if (driveEncLeft.getRate() >= maxSpeedLeft)
+    	if (Robot.frontInversionChooser.getSelected() == "lift")
     	{
-    		maxSpeedLeft = driveEncLeft.getRate();
+    		leftSpeed = -rightstick.getRawAxis(1); 
+    		rightSpeed = -leftstick.getRawAxis(1);
     	}
-    	if (driveEncRight.getRate() >= maxSpeedRight)
-    	{
-    		maxSpeedRight = driveEncRight.getRate();
-    	}
-    	SmartDashboard.putNumber("GyroX", imu.getAngleX());
-    	SmartDashboard.putNumber("GyroY", imu.getAngleY());
-    	SmartDashboard.putNumber("GyroZ", imu.getAngleZ());
-    	//SmartDashboard.putString("maxSpeedLeft", (Double.toString(maxSpeedLeft)) );
-    	//SmartDashboard.putString("maxSpeedRight", (Double.toString(maxSpeedRight)) );
+    	
+    	
+    	
+    	roboDrive.tankDrive(leftSpeed*throttle, rightSpeed*throttle);
+    	
+    	SmartDashboard.putNumber("takeJoystickInput-GyroX", imu.getAngleX());
+    	SmartDashboard.putNumber("takeJoystickInput-GyroY", imu.getAngleY());
+    	SmartDashboard.putNumber("takeJoystickInput-GyroZ", imu.getAngleZ());
 
     }
 
@@ -218,5 +219,6 @@ public class drive extends Subsystem {
     	
     	return avgDistance;
     }
+    
 }
 

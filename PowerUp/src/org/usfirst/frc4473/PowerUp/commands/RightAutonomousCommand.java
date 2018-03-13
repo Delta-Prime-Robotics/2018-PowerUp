@@ -25,7 +25,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class RightAutonomousCommand extends CommandGroup {
 	
-    public RightAutonomousCommand() {
+    public RightAutonomousCommand(String gameData) {
 
         // Add Commands here:
         // e.g. addSequential(new Command1());
@@ -44,7 +44,6 @@ public class RightAutonomousCommand extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	
-    	String gameData = DriverStation.getInstance().getGameSpecificMessage();
     	if(gameData.length() > 0)
         {
     		SmartDashboard.putString("AutonomousCommand", "Right");    		
@@ -56,24 +55,21 @@ public class RightAutonomousCommand extends CommandGroup {
     		if(switchIsOnRight(gameData))
     		{
     			//Add commands unique to switch on Right
-    			this.addSequential(new driveToDistance(114)); 
+    			this.addSequential(new driveToDistance(140)); 
     			this.addSequential(new turnToAngle(-90));
+    			
+    			this.addSequential(new switchHeight());
+    			this.addSequential(new driveToDistance(18));
+        		this.addSequential(new grabRelease());
     		}
     		else 
     		{
     			//Add commands unique to switch on Left
-    			if (scaleIsOnRight(gameData)) {
-    				// Go to the switch
-    			}
-    			else {
-    				//?
-    			}
+    			this.addSequential(new driveToDistance(93)); 
     			//this.addSequential(new turnToAngle(-90));
     		}
     		// commands common to both switch positions
-    		this.addSequential(new switchHeight());
-			//this.addSequential(new driveToDistance(18));
-    		this.addSequential(new grabRelease());
+    	
 		} 
 		else 
 		{

@@ -19,7 +19,7 @@ public class turnToAngle extends Command {
     	requires(Robot.drive);
     	
     	targetAngle = angle;
-        SmartDashboard.putNumber("targetAngle",targetAngle);
+        SmartDashboard.putNumber("turnToAngle-targetAngle",targetAngle);
     }
 
     // Called just before this Command runs the first time
@@ -46,7 +46,7 @@ public class turnToAngle extends Command {
     		rate = sign * 0.45;
     	}
     	    	
-    	SmartDashboard.putNumber("r8", rate);
+    	SmartDashboard.putNumber("TurnToAngle-Rate", rate);
     	
     	Robot.drive.rotate(rate);
     }

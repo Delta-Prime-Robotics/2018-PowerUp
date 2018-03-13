@@ -26,7 +26,8 @@ public class driveToDistance extends Command {
     protected void initialize() {
     	Robot.drive.resetDistance();
     	initAngle = Robot.drive.getAngle();
-        SmartDashboard.putNumber("targetDistance",targetDistance);
+        SmartDashboard.putNumber("driveToDistance-initAngle",initAngle);
+        SmartDashboard.putNumber("driveToDistance-TargetDistance",targetDistance);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -37,7 +38,7 @@ public class driveToDistance extends Command {
     			Robot.drive.driveAtAngle(-0.65, initAngle);
     		}
     		else {
-    	        SmartDashboard.putNumber("distance reached",Robot.drive.getDistance());
+    	        SmartDashboard.putNumber("driveToDistance-DistanceReached",Robot.drive.getDistance());
     			isDone = true;
     		}
     	}
@@ -46,7 +47,7 @@ public class driveToDistance extends Command {
 				Robot.drive.driveAtAngle(0.65, initAngle);
 			}
 			else {
-		        SmartDashboard.putNumber("distance reached",Robot.drive.getDistance());
+		        SmartDashboard.putNumber("driveToDistance-DistanceReached",Robot.drive.getDistance());
 				isDone = true;
 			}
     	}
